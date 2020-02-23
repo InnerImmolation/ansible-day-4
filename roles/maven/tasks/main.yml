@@ -1,0 +1,6 @@
+---
+# tasks file for maven
+- name: Installing Maven
+  become: yes
+  yum:
+    name: maven

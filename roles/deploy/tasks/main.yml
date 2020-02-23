@@ -1,0 +1,20 @@
+---
+# tasks file for deploy
+- name: install curl
+  yum:
+    name: curl
+  become: yes
+  
+- name: copy_war
+  copy:
+    src: "{{ war }}"
+    dest: /home/vagrant
+
+- name: deploy war
+  deploy_war:
+    war_file: "{{ ''.join(('/home/vagrant/', war.split('/')[-1:][0])) }}"
+    user: "{{ user_name }}"
+    pass: "{{ password }}"
+    server: "{{ server }}"
+    app_name: "{{ app_name }}"
+  become: yes

@@ -1,0 +1,4 @@
+- name: Install java, nginx, tomcat
+  hosts: vm2
+  roles:
+    - deploy

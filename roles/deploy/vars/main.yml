@@ -1,0 +1,7 @@
+---
+# vars file for deploy
+war: hello-war/target/mnt-lab.wa
+user_name: admin
+password: admin
+server: 10.19.10.36
+app_name: hello_world-path
